@@ -410,16 +410,7 @@ const CASES = [
                           "4. THE TRADER places an object in the hands of the subject, which it describes as fair value. The object is always something it has judged to be of equal worth to what it took.\n\n" +
                           "5. The door reappears behind the subject, and THE TRADER thanks them for their business.\n\n" +
                           "The concept of value used by THE TRADER does not follow any economic or practical logic we have been able to identify. A subject who surrendered a fingertip received a small brass key that opens nothing we have found. A subject who surrendered an eye received a handwritten letter from a deceased relative. A subject who surrendered a tooth received a jar of warm sand that has not cooled in fourteen months. The items appear to be genuine rather than illusions, and none have so far proven directly harmful, although the long-term effects of several are still under observation.",
-    // ◀ SIGHTINGS & EVIDENCE (section 02). One paragraph per line. Each line ends with \n\n and a + sign, except the last.
-    evidence:       "Item E-01: Initial survey photographs. Taken by Field Team Delta on first approach. Exterior photographs show a standard structure. A second set, taken by the same cameras ninety seconds later from the same positions, shows the door slightly open. No team member opened it. The audio logs of the team show no sound during this period.\n\n" +
-                          "Item E-02: Interview transcript, Subject 1 (civilian, male, aged 54). Subject 1 entered on his own after seeing the open door from the road. He was inside for approximately eleven hours by his own estimate. Our records show he was gone for four minutes. Excerpt from his statement:\n\n" +
-                          "He was not rude, you understand. That is what I keep trying to tell people. He was the most polite man I have ever met. He said he was sorry, but I could not go until we had done our business. I said I did not have any business. He said everyone has business. Then he asked if I would mind terribly if he took the little finger.\n\n" +
-                          "Subject 1 lost the little finger of his right hand. In exchange he received a pocket watch that keeps perfect time but runs backwards. The watch is now catalogued as Item E-03.\n\n" +
-                          "Item E-03: Recovered object, pocket watch of Subject 1. Tested at three separate laboratories. Results are consistent: the mechanism is not clockwork and not electronic, and no energy source has been found. The hands move anticlockwise at the correct rate. The inscription on the back reads, in handwriting that matches that of Subject 1, the words Time you will want back. Subject 1 had never seen this writing before.\n\n" +
-                          "Item E-04: Surveillance footage, Subject 4 (D-class volunteer, authorised entry). The subject entered wearing a body camera and a tether line. The tether did not tighten at any stage and no resistance was recorded, but when it was recovered, forty metres of line were found coiled neatly at the threshold, cut clean. The body camera footage consists of 19 minutes of an unlit corridor, with the audio of a calm male voice repeating only one sentence: Please, take your time. I am in no hurry. A further three minutes of footage show the interior, but the file was corrupted on playback. Technicians reported that each time the file was opened the image was slightly different.\n\n" +
-                          "Item E-05: Medical report, Subject 4. The subject lost the sense of taste. No physical damage could be found. In exchange the subject was given a small glass vial containing a clear liquid, which, when tasted by a second volunteer, produced a vivid memory of a meal the subject had eaten as a child. The second volunteer had never met Subject 4 and described the memory as definitely not mine, but real.\n\n" +
-                          "Item E-06: Written statement, Dr. A. Halloran. Dr. Halloran, a senior analyst, observed that every item exchanged appears to be personal to the subject in some way. This applies even to objects that look generic. She wrote that THE TRADER is not pricing the body part. It is pricing what the person has lost, or could lose. She concluded that it knows exactly what each of them can afford.\n\n" +
-                          "Item E-07: Exit analysis. Across all recorded entries, no subject has left without a trade, and no subject has been refused one. In the one instance where a subject attempted to offer a different body part than the one selected, the offer was acknowledged and politely declined. THE TRADER replied that this would be a different trade and that it had already begun this one.",
+    evidence:       "",                     // ◀ SIGHTINGS & EVIDENCE (section 02)
     notes:          "",                     // ◀ FIELD NOTES (section 03)
     image:          "",                     // ◀ IMAGE LINK (blank = default image)
     caption:        "",                     // ◀ IMAGE CAPTION / CREDIT
@@ -689,4 +680,59 @@ form.addEventListener("submit", async e => {
   const data = {
     title, description: text,
     date: $("#f-date").value || "Not given",
-    location: $("#f-loc").value.trim() ... (3 KB left)
+    location: $("#f-loc").value.trim() || "Not given",
+    name: $("#f-name").value.trim() || "Anonymous",
+    email: reply || "Not given"
+  };
+
+  if (FORM_ENDPOINT) {
+    const btn = $("#send-btn"); btn.disabled = true;
+    try {
+      const res = await fetch(FORM_ENDPOINT, {method: "POST", headers: {"Content-Type": "application/json", "Accept": "application/json"}, body: JSON.stringify({...data, _subject: "C-MRF sighting: " + title})});
+      if (!res.ok) throw new Error();
+      form.reset(); $("#count").textContent = 0;
+      say("Sighting sent. Thank you. It is now with the archive team.", "ok");
+    } catch (err) {
+      say("The report didn't send. Check your connection and try again.", "err");
+    }
+    btn.disabled = false;
+    return;
+  }
+
+  // ---- No endpoint set: send by email (mailto), with Gmail + copy fallbacks ----
+  const subject = "C-MRF sighting: " + title;
+  const body = `Title: ${data.title}\nDate: ${data.date}\nLocation: ${data.location}\nName: ${data.name}\nReply email: ${data.email}\n\nDescription:\n${data.description}`;
+  const enc = encodeURIComponent;
+  const mailto = `mailto:${SUBMISSION_EMAIL}?subject=${enc(subject)}&body=${enc(body)}`;
+  const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${enc(SUBMISSION_EMAIL)}&su=${enc(subject)}&body=${enc(body)}`;
+  const fullReport = `To: ${SUBMISSION_EMAIL}\nSubject: ${subject}\n\n${body}`;
+
+  // Try the visitor's default email app (a real link click is more reliable than changing location)
+  const a = document.createElement("a");
+  a.href = mailto; a.style.display = "none";
+  document.body.appendChild(a); a.click(); a.remove();
+
+  // Always show the other ways to send, in case no email app opened
+  status.textContent = "";
+  status.className = "status ok";
+  status.appendChild(document.createTextNode("Your report is ready to send to " + SUBMISSION_EMAIL + ". If your email app opened, press send there. If nothing opened, use one of these:"));
+  const g = document.createElement("a");
+  g.className = "link"; g.href = gmail; g.target = "_blank"; g.rel = "noopener"; g.textContent = "OPEN IN GMAIL ↗";
+  const c = document.createElement("button");
+  c.type = "button"; c.className = "link"; c.textContent = "COPY REPORT";
+  c.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(fullReport); c.textContent = "COPIED ✓"; }
+    catch (err) {
+      const t = document.createElement("textarea"); t.value = fullReport; document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); c.textContent = "COPIED ✓"; } catch (e2) { c.textContent = "COPY FAILED - SELECT TEXT MANUALLY"; }
+      t.remove();
+    }
+  });
+  const opts = document.createElement("div");
+  opts.className = "opts"; opts.append(g, c);
+  status.appendChild(opts);
+  status.hidden = false;
+});
+</script>
+</body>
+</html>
