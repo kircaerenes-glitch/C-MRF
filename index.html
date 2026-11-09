@@ -25,7 +25,7 @@
 :root{--void:#050606;--panel:#0b0e0d;--row:#0a0c0c;--paper:#c9c6bc;--text:#ece8df;--soft:#8f918a;--sheet:#0c0e0e;--ink:#ece8df;--red:rgb(var(--r-8c1c1c));--hot:rgb(var(--r-e04a3e));--blood:rgb(var(--r-5e0d0d));--rule:#252a28;--line:#343a37}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--void)}
-body{margin:0;font-family:"Space Mono",monospace;font-size:14px;color:var(--paper);min-height:100vh;
+body{margin:0;font-family:"Space Mono",monospace;font-size:calc(14px * var(--ts));color:var(--paper);min-height:100vh;
   background:
    radial-gradient(ellipse at 88% -4%,rgb(var(--r-3a0b0b) / 0.4) 0,transparent 42%),
    radial-gradient(ellipse at 6% 105%,rgb(var(--r-2a0707) / 0.27) 0,transparent 45%),
@@ -44,20 +44,20 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 [hidden]{display:none!important}
 :is(button,input,textarea,select):focus-visible{outline:2px solid var(--hot);outline-offset:3px}
 .wrap{max-width:1280px;margin:0 auto;padding:0 20px}
-.small{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase}
+.small{font-size:calc(10.5px * var(--ts));letter-spacing:.22em;text-transform:uppercase}
 .hot{color:var(--hot)} .soft{color:var(--soft)}
 .stamp{display:inline-block;border:1px solid currentColor;padding:4px 12px;transform:rotate(-2deg);text-shadow:0 0 10px rgb(var(--r-e04a3e) / 0.4)}
-.btn{min-height:48px;padding:12px 24px;font-weight:700;font-size:12px;letter-spacing:.14em;background:linear-gradient(180deg,rgb(var(--r-a02323)),rgb(var(--r-6e1212)));color:#f4ece4;border:1px solid rgb(var(--r-b53a33));clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.btn{min-height:48px;padding:12px 24px;font-weight:700;font-size:calc(12px * var(--ts));letter-spacing:.14em;background:linear-gradient(180deg,rgb(var(--r-a02323)),rgb(var(--r-6e1212)));color:#f4ece4;border:1px solid rgb(var(--r-b53a33));clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
 .btn:hover{background:linear-gradient(180deg,rgb(var(--r-c22d28)),rgb(var(--r-861717)))}
 .btn.ghost{background:none;border:1px solid #4a514e;color:var(--text);font-weight:400}
 .btn.ghost:hover{background:rgb(var(--r-140808));border-color:var(--hot);color:#fff}
-.link{font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--hot)}
+.link{font-weight:700;font-size:calc(12px * var(--ts));letter-spacing:.1em;color:var(--hot)}
 .link:hover{text-decoration:underline;text-underline-offset:5px;text-shadow:0 0 12px rgb(var(--r-e04a3e) / 0.53)}
 
 /* gate */
 .gate{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at center,rgb(var(--r-120404) / 0.95) 0,#020202 80%)}
 .gate .card{width:min(100%,720px);padding:44px;border:1px solid rgb(var(--r-3a1210));background:linear-gradient(180deg,#0d0f0f,#070808);box-shadow:0 0 60px rgb(var(--r-5e0d0d) / 0.33),0 0 0 1px #000 inset}
-.gate h1{font-size:34px;margin:22px 0}
+.gate h1{font-size:calc(34px * var(--ts));margin:22px 0}
 .gate p.body{max-width:600px;line-height:1.7;color:#a9aaa2;margin-bottom:32px}
 
 /* header */
@@ -65,10 +65,10 @@ header{border-bottom:1px solid var(--rule);background:#070909}
 header .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding-top:20px;padding-bottom:20px}
 .brand{display:flex;gap:16px;align-items:center}
 .logo{width:64px;height:64px;flex:none;display:block;overflow:visible}
-.brand-sub{margin-top:4px;font-size:9px;letter-spacing:.3em}
-.brand b{font-family:"Cormorant Garamond","Special Elite",serif;font-weight:700;font-size:28px;letter-spacing:.2em;color:var(--text);display:block}
+.brand-sub{margin-top:4px;font-size:calc(9px * var(--ts));letter-spacing:.3em}
+.brand b{font-family:"Cormorant Garamond","Special Elite",serif;font-weight:700;font-size:calc(28px * var(--ts));letter-spacing:.2em;color:var(--text);display:block}
 nav{display:flex;flex-wrap:wrap;gap:28px}
-nav button{text-transform:uppercase;font-size:11px;letter-spacing:.2em;color:var(--soft);padding:6px 0;transition:color .2s}
+nav button{text-transform:uppercase;font-size:calc(11px * var(--ts));letter-spacing:.2em;color:var(--soft);padding:6px 0;transition:color .2s}
 nav button[aria-current=page]{color:var(--hot);text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px;text-shadow:0 0 12px rgb(var(--r-e04a3e) / 0.47)}
 
 /* cover */
@@ -76,7 +76,7 @@ nav button[aria-current=page]{color:var(--hot);text-decoration:underline;text-un
 @media(min-width:1024px){.hero{grid-template-columns:1fr .82fr;gap:64px;padding-block:80px}}
 .hero .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
 .bar{width:72px;height:2px;background:linear-gradient(90deg,var(--hot),transparent);box-shadow:0 0 14px var(--red);margin:64px 0 32px}
-.hero h1{font-size:clamp(40px,7vw,68px);max-width:660px;line-height:1.02;font-weight:500;font-style:italic;text-shadow:0 0 32px rgb(var(--r-8c1c1c) / 0.53)}
+.hero h1{font-size:calc(clamp(40px,7vw,68px) * var(--ts));max-width:660px;line-height:1.02;font-weight:500;font-style:italic;text-shadow:0 0 32px rgb(var(--r-8c1c1c) / 0.53)}
 .hero .lead{margin-top:28px;max-width:560px;line-height:1.8;color:var(--soft)}
 .hero .acts{display:flex;flex-wrap:wrap;gap:12px;padding-top:40px}
 .plate{position:relative;overflow:hidden;background:#0a0c0c;border:1px solid var(--line);height:360px}
@@ -86,19 +86,19 @@ nav button[aria-current=page]{color:var(--hot);text-decoration:underline;text-un
 .plate span{position:absolute;z-index:2;left:16px;right:16px;bottom:16px;border:1px solid rgb(var(--r-6b2a26));background:#000000aa;padding:8px 12px;color:#d9d4c8;width:fit-content;max-width:calc(100% - 32px)}
 .teaser{border-block:1px solid var(--rule);background:linear-gradient(90deg,rgb(var(--r-140606)),#090b0b 60%)}
 .teaser .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-top:32px;padding-bottom:32px}
-.teaser h2{font-size:30px;margin-top:8px;letter-spacing:.08em}
-.teaser p.note{max-width:440px;line-height:1.8;color:var(--soft);font-size:13px}
+.teaser h2{font-size:calc(30px * var(--ts));margin-top:8px;letter-spacing:.08em}
+.teaser p.note{max-width:440px;line-height:1.8;color:var(--soft);font-size:calc(13px * var(--ts))}
 
 /* index */
 .layout{display:grid;gap:40px;padding-block:40px 64px}
 @media(min-width:1024px){.layout{grid-template-columns:230px minmax(0,1fr);padding-block:64px}.layout aside{border-right:1px solid var(--rule);padding-right:32px}}
-.layout aside h1{font-size:44px;margin-top:16px}
-.layout aside p.d{margin-top:24px;line-height:1.8;color:var(--soft);font-size:13px}
+.layout aside h1{font-size:calc(44px * var(--ts));margin-top:16px}
+.layout aside p.d{margin-top:24px;line-height:1.8;color:var(--soft);font-size:calc(13px * var(--ts))}
 .layout aside .stamp{margin-top:36px}
 .filters{display:grid;gap:12px;margin-bottom:32px}
 @media(min-width:640px){.filters{grid-template-columns:minmax(0,1fr) 170px auto}}
 .filters label{display:block;margin-bottom:8px;color:var(--soft)}
-.field{width:100%;min-height:48px;background:#050707;color:#ece8df;border:1px solid var(--line);padding:12px 14px;border-radius:0;font:inherit;font-size:15px;transition:border-color .2s,box-shadow .2s}
+.field{width:100%;min-height:48px;background:#050707;color:#ece8df;border:1px solid var(--line);padding:12px 14px;border-radius:0;font:inherit;font-size:calc(15px * var(--ts));transition:border-color .2s,box-shadow .2s}
 .field::placeholder{color:#6b6e68;opacity:1}
 .field:focus{border-color:var(--hot);box-shadow:0 0 0 1px var(--hot),0 0 18px rgb(var(--r-8c1c1c) / 0.4)}
 select.field option{background:#0b0e0d;color:#ece8df}
@@ -108,11 +108,11 @@ textarea.field{min-height:150px;resize:vertical}
 .row{display:grid;gap:16px;padding:22px 20px;border-bottom:1px solid var(--rule);background:var(--row);transition:background .25s}
 .row:hover{background:linear-gradient(90deg,rgb(var(--r-1a0707)),#0a0c0c 70%)}
 @media(min-width:640px){.row{grid-template-columns:100px minmax(0,1fr) auto;gap:24px}}
-.row h2{font-size:30px}
-.row p.s{margin-top:12px;line-height:1.8;color:var(--soft);font-size:13px}
+.row h2{font-size:calc(30px * var(--ts))}
+.row p.s{margin-top:12px;line-height:1.8;color:var(--soft);font-size:calc(13px * var(--ts))}
 .row .side{display:flex;align-items:center;justify-content:space-between;gap:16px}
 @media(min-width:640px){.row .side{flex-direction:column;align-items:flex-end}}
-.empty{border:1px solid var(--line);padding:28px;margin-top:20px;color:var(--text);font-size:13px}
+.empty{border:1px solid var(--line);padding:28px;margin-top:20px;color:var(--text);font-size:calc(13px * var(--ts))}
 
 /* dossier */
 .detail{padding-block:36px 56px}
@@ -124,9 +124,9 @@ textarea.field{min-height:150px;resize:vertical}
 @media(min-width:1024px){.dossier .grid{grid-template-columns:minmax(0,1fr) 310px}}
 .dossier .main{padding:28px 24px 40px}
 @media(min-width:640px){.dossier .main{padding:40px}}
-.dossier h1{font-size:clamp(36px,6vw,58px);text-shadow:0 0 28px rgb(var(--r-8c1c1c) / 0.47)}
-.dossier .meta{margin-top:16px;padding-bottom:28px;border-bottom:1px solid var(--rule);color:var(--soft);font-size:12px;letter-spacing:.08em}
-.dossier h2{font-size:28px;margin-top:40px;font-weight:500;font-style:italic;color:#d9cfc4}
+.dossier h1{font-size:calc(clamp(36px,6vw,58px) * var(--ts));text-shadow:0 0 28px rgb(var(--r-8c1c1c) / 0.47)}
+.dossier .meta{margin-top:16px;padding-bottom:28px;border-bottom:1px solid var(--rule);color:var(--soft);font-size:calc(12px * var(--ts));letter-spacing:.08em}
+.dossier h2{font-size:calc(28px * var(--ts));margin-top:40px;font-weight:500;font-style:italic;color:#d9cfc4}
 .dossier .main p.t{margin-top:16px;line-height:2;color:#b4b2a8}
 .dossier aside{padding:24px;background:#060808;border-top:1px solid var(--rule)}
 @media(min-width:1024px){.dossier aside{border-top:0;border-left:1px solid var(--rule)}}
@@ -139,18 +139,18 @@ textarea.field{min-height:150px;resize:vertical}
 /* submit */
 .form-wrap{display:grid;gap:40px;padding-block:40px 72px}
 @media(min-width:1024px){.form-wrap{grid-template-columns:300px minmax(0,1fr);padding-block:64px}}
-.form-wrap h1{font-size:44px;margin-top:16px}
-.form-wrap .d{margin-top:24px;line-height:1.8;color:var(--soft);font-size:13px}
+.form-wrap h1{font-size:calc(44px * var(--ts));margin-top:16px}
+.form-wrap .d{margin-top:24px;line-height:1.8;color:var(--soft);font-size:calc(13px * var(--ts))}
 form.sub{display:grid;gap:20px;max-width:720px}
 form.sub .two{display:grid;gap:20px}
 @media(min-width:640px){form.sub .two{grid-template-columns:1fr 1fr}}
 form.sub label{display:block;margin-bottom:8px;color:var(--soft)}
-form.sub .hint{margin-top:6px;font-size:11px;color:#6b6e68}
-.status{padding:14px 16px;border:1px solid var(--line);line-height:1.6;font-size:13px}
+form.sub .hint{margin-top:6px;font-size:calc(11px * var(--ts));color:#6b6e68}
+.status{padding:14px 16px;border:1px solid var(--line);line-height:1.6;font-size:calc(13px * var(--ts))}
 .status.ok{border-color:#4d7a5a;color:#b5d6bd}
 .status.err{border-color:var(--hot);color:var(--hot)}
-.safety{border:1px solid rgb(var(--r-4a1a17));border-left:3px solid var(--hot);padding:16px 18px;background:rgb(var(--r-0d0707));line-height:1.7;font-size:13px;color:var(--paper)}
-.safety b{display:block;margin-bottom:6px;color:var(--hot);letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+.safety{border:1px solid rgb(var(--r-4a1a17));border-left:3px solid var(--hot);padding:16px 18px;background:rgb(var(--r-0d0707));line-height:1.7;font-size:calc(13px * var(--ts));color:var(--paper)}
+.safety b{display:block;margin-bottom:6px;color:var(--hot);letter-spacing:.14em;text-transform:uppercase;font-size:calc(11px * var(--ts))}
 .hp{position:absolute;left:-9999px;height:0;overflow:hidden}
 
 /* ===== polish ===== */
@@ -182,7 +182,7 @@ nav button:hover{color:var(--hot);text-shadow:0 0 12px rgb(var(--r-e04a3e) / 0.4
 .stats{border-top:1px solid var(--rule)}
 .stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);column-gap:20px}
 .stat{display:flex;flex-direction:column;gap:6px;padding:18px 0}
-.stat b{font:500 48px/1 "Cormorant Garamond","Special Elite",serif;color:var(--text);text-shadow:0 0 22px rgb(var(--r-8c1c1c) / 0.53)}
+.stat b{font:500 calc(48px * var(--ts))/1 "Cormorant Garamond","Special Elite",serif;color:var(--text);text-shadow:0 0 22px rgb(var(--r-8c1c1c) / 0.53)}
 @media(min-width:720px){.stats .wrap{grid-template-columns:repeat(4,1fr);column-gap:0}.stat{padding:26px 24px;border-left:1px solid var(--rule)}.stat:first-child{border-left:0;padding-left:0}}
 
 /* status pills + index rows */
@@ -197,13 +197,13 @@ nav button:hover{color:var(--hot);text-shadow:0 0 12px rgb(var(--r-e04a3e) / 0.4
 .f-type{border:0;margin:0;padding:0;min-width:0}
 .f-type legend{padding:0;margin-bottom:8px;color:var(--soft)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{min-height:44px;padding:10px 16px;border:1px solid var(--line);background:#050707;color:var(--paper);font-size:11px;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,border-color .15s,box-shadow .15s}
+.chip{min-height:44px;padding:10px 16px;border:1px solid var(--line);background:#050707;color:var(--paper);font-size:calc(11px * var(--ts));letter-spacing:.14em;text-transform:uppercase;transition:background .15s,border-color .15s,box-shadow .15s}
 .chip:hover{border-color:var(--hot);box-shadow:0 0 14px rgb(var(--r-8c1c1c) / 0.33)}
 .chip .n{margin-left:6px;opacity:.6}
 .chip[aria-pressed=true]{background:linear-gradient(180deg,rgb(var(--r-8c1c1c)),rgb(var(--r-5e0d0d)));border-color:rgb(var(--r-c22d28));color:#fff;font-weight:700;box-shadow:0 0 16px rgb(var(--r-8c1c1c) / 0.53)}
 .count{margin:0 0 14px}
 .tags{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:10px}
-.tag{display:inline-block;border:1px solid currentColor;padding:2px 8px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--hot)}
+.tag{display:inline-block;border:1px solid currentColor;padding:2px 8px;font-size:calc(10px * var(--ts));letter-spacing:.18em;text-transform:uppercase;color:var(--hot)}
 .danger{display:inline-flex;align-items:center;gap:10px;margin:0}
 .meter{display:inline-flex;gap:3px}
 .meter i{width:14px;height:6px;background:#1e2321}
@@ -211,7 +211,7 @@ nav button:hover{color:var(--hot);text-shadow:0 0 12px rgb(var(--r-e04a3e) / 0.4
 .lv-1{--lvl:var(--lv1)}.lv-2{--lvl:var(--lv2)}.lv-3{--lvl:var(--lv3)}.lv-4{--lvl:var(--lv4)}.lv-5{--lvl:var(--lv5)}
 .threat{margin-top:24px;padding:16px 18px;border:1px solid var(--rule);border-left:3px solid var(--lvl,rgb(var(--r-8c1c1c)));background:linear-gradient(90deg,#ffffff07,transparent);display:grid;gap:8px}
 .threat p.t{margin:0;line-height:1.7}
-.threat .lvl-text{font-size:12px;letter-spacing:.14em;color:var(--text)}
+.threat .lvl-text{font-size:calc(12px * var(--ts));letter-spacing:.14em;color:var(--text)}
 .dossier .meter i:not(.on){background:#1e2321}
 
 /* dossier: watermark, pager */
@@ -229,7 +229,7 @@ form.sub{max-width:720px;padding:24px;border:1px solid var(--line);border-top:2p
 .status .opts{display:flex;flex-wrap:wrap;gap:0 28px;margin-top:8px}
 .status a.link,.status button.link{display:inline-block;padding:10px 0;min-height:44px}
 
-footer{border-top:1px solid var(--rule);padding:24px 0;color:#5f625d;font-size:11px;letter-spacing:.12em}
+footer{border-top:1px solid var(--rule);padding:24px 0;color:#5f625d;font-size:calc(11px * var(--ts));letter-spacing:.12em}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
 /* ===== ANIMATIONS: boot, unseal, page transitions, button clicks ===== */
@@ -239,7 +239,7 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:#5f625d;font-size:1
 #boot:before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,transparent,rgb(var(--r-e04a3e)) 20%,rgb(var(--r-ff8a7a)) 50%,rgb(var(--r-e04a3e)) 80%,transparent);box-shadow:0 0 22px 3px rgb(var(--r-8c1c1c));transform:scaleX(0);opacity:1;animation:crt .45s cubic-bezier(.2,.8,.2,1) forwards,crtOut .25s ease .45s forwards}
 @keyframes crt{to{transform:scaleX(1)}}
 @keyframes crtOut{to{opacity:0}}
-#boot .term{width:min(92%,560px);font-size:12px;line-height:2.1;letter-spacing:.14em;color:#8f938c;text-transform:uppercase}
+#boot .term{width:min(92%,560px);font-size:calc(12px * var(--ts));line-height:2.1;letter-spacing:.14em;color:#8f938c;text-transform:uppercase}
 #boot .term p{white-space:nowrap;overflow:hidden;clip-path:inset(0 100% 0 0);animation:typeIn .4s steps(34) forwards}
 #boot .term p:nth-child(1){animation-delay:.5s;color:#ece8df}
 #boot .term p:nth-child(2){animation-delay:.8s}
@@ -259,7 +259,7 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:#5f625d;font-size:1
 #unseal{position:fixed;inset:0;z-index:96;display:none;place-items:center;text-align:center;pointer-events:none;background:radial-gradient(ellipse at center,rgb(var(--r-1d0606)) 0,#000 75%)}
 html.unsealing #unseal{display:grid;animation:unsealOut 1.5s ease forwards}
 @keyframes unsealOut{0%{opacity:1}68%{opacity:1}100%{opacity:0}}
-#unseal .t{font-family:"Cormorant Garamond","Special Elite",serif;font-weight:600;font-size:clamp(26px,5vw,52px);text-transform:uppercase;color:var(--text);text-shadow:0 0 30px rgb(var(--r-c22d28));animation:track 1.3s ease forwards}
+#unseal .t{font-family:"Cormorant Garamond","Special Elite",serif;font-weight:600;font-size:calc(clamp(26px,5vw,52px) * var(--ts));text-transform:uppercase;color:var(--text);text-shadow:0 0 30px rgb(var(--r-c22d28));animation:track 1.3s ease forwards}
 @keyframes track{0%{letter-spacing:.9em;opacity:0;filter:blur(10px)}35%{opacity:1;filter:none}100%{letter-spacing:.3em;opacity:1}}
 #unseal .s{margin-top:18px;color:var(--hot);animation:fadeUp .8s ease .35s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -292,24 +292,24 @@ nav button:active,.link:active{transform:scale(.94)}
 
 /* ===== CLEANER FILE-INDEX FILTERS ===== */
 .filters{gap:18px 16px;padding:20px;margin-bottom:14px;background:linear-gradient(180deg,#0b0e0d,#070909);border:1px solid var(--rule);border-left:2px solid var(--red)}
-.filters label,.f-type legend{display:block;margin:0 0 8px;padding:0;font-size:10px;letter-spacing:.24em;color:var(--soft)}
+.filters label,.f-type legend{display:block;margin:0 0 8px;padding:0;font-size:calc(10px * var(--ts));letter-spacing:.24em;color:var(--soft)}
 /* search with icon */
 .f-search .field{padding-left:42px;background:#050707 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23e04a3e' stroke-width='2' stroke-linecap='round'><circle cx='11' cy='11' r='7'/><path d='M20 20l-3.5-3.5'/></svg>") no-repeat 15px center}
 /* fields: slimmer, custom chevron on the dropdowns */
-.filters .field{min-height:44px;font-size:13px;letter-spacing:.02em;border-color:var(--rule);background-color:#050707}
+.filters .field{min-height:44px;font-size:calc(13px * var(--ts));letter-spacing:.02em;border-color:var(--rule);background-color:#050707}
 .filters .field:hover{border-color:var(--line)}
 .filters .field:focus{border-color:var(--hot);box-shadow:none}
 .filters select.field{-webkit-appearance:none;appearance:none;cursor:pointer;padding-right:40px;background:#050707 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23e04a3e' stroke-width='1.6' stroke-linecap='square'><path d='M1 1.5l5 5 5-5'/></svg>") no-repeat right 15px center}
 /* type chips become a joined segmented control */
 .f-type{grid-column:1/-1}
 .chips{gap:0;flex-wrap:wrap}
-.chip{min-height:44px;padding:10px 20px;margin:0 -1px 0 0;border-color:var(--rule);background:#050707;color:var(--soft);font-size:11px;letter-spacing:.16em}
+.chip{min-height:44px;padding:10px 20px;margin:0 -1px 0 0;border-color:var(--rule);background:#050707;color:var(--soft);font-size:calc(11px * var(--ts));letter-spacing:.16em}
 .chip:hover{color:var(--text);border-color:var(--line);box-shadow:none;position:relative;z-index:1}
 .chip .n{opacity:.5;margin-left:8px}
 .chip[aria-pressed=true]{position:relative;z-index:2;color:#fff;background:linear-gradient(180deg,rgb(var(--r-6e1313)),rgb(var(--r-470a0a)));border-color:rgb(var(--r-b53a33));box-shadow:inset 0 -2px 0 var(--hot),0 0 14px rgb(var(--r-8c1c1c) / 0.33)}
 .chip[aria-pressed=true] .n{opacity:.75}
 /* reset: quiet text-button instead of a big ghost block */
-.filters .btn.ghost{clip-path:none;min-height:44px;padding:0 18px;font-size:11px;letter-spacing:.18em;font-weight:400;color:var(--soft);border-color:var(--rule);text-transform:uppercase}
+.filters .btn.ghost{clip-path:none;min-height:44px;padding:0 18px;font-size:calc(11px * var(--ts));letter-spacing:.18em;font-weight:400;color:var(--soft);border-color:var(--rule);text-transform:uppercase}
 .filters .btn.ghost:before{content:"\21BA\00a0\00a0";color:var(--hot)}
 .filters .btn.ghost:hover{color:var(--text);border-color:var(--hot);background:rgb(var(--r-140808))}
 @media(max-width:639px){
@@ -338,8 +338,8 @@ nav button:active,.link:active{transform:scale(.94)}
 .docmeta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0;padding:0;border-bottom:1px solid var(--rule)}
 @media(min-width:720px){.docmeta{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .docmeta div{padding:14px 14px 14px 0}
-.docmeta dt{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--soft);margin:0 0 6px}
-.docmeta dd{margin:0;font-size:12px;letter-spacing:.04em;color:var(--paper)}
+.docmeta dt{font-size:calc(9px * var(--ts));letter-spacing:.24em;text-transform:uppercase;color:var(--soft);margin:0 0 6px}
+.docmeta dd{margin:0;font-size:calc(12px * var(--ts));letter-spacing:.04em;color:var(--paper)}
 .addendum{margin-top:16px;padding:16px 18px;border:1px dashed rgb(var(--r-4a1a17));background:#080a0a}
 .addendum .small{color:var(--hot);margin-bottom:12px}
 .redline{height:12px;margin:9px 0;background:repeating-linear-gradient(135deg,rgb(var(--r-1c0d0d)) 0 5px,rgb(var(--r-260f0f)) 5px 10px);border:1px solid rgb(var(--r-321110))}
@@ -347,7 +347,7 @@ nav button:active,.link:active{transform:scale(.94)}
 .related{display:grid;gap:12px;margin-top:16px}
 @media(min-width:640px){.related{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}}
 .rel{display:grid;gap:7px;align-content:start;text-align:left;padding:14px 16px;border:1px solid var(--rule);border-left:2px solid var(--red);background:#080a0a;transition:border-color .2s,background .2s,transform .2s}
-.rel b{font-family:"Cormorant Garamond","Special Elite",serif;font-weight:600;font-size:22px;line-height:1.1;color:var(--text)}
+.rel b{font-family:"Cormorant Garamond","Special Elite",serif;font-weight:600;font-size:calc(22px * var(--ts));line-height:1.1;color:var(--text)}
 .rel:hover{border-color:var(--hot);background:linear-gradient(90deg,rgb(var(--r-1a0707)),#080a0a);transform:translateX(3px)}
 .barcode{height:38px;margin-top:20px;opacity:.5;background:repeating-linear-gradient(90deg,#c9c6bc 0 2px,transparent 2px 4px,#c9c6bc 4px 5px,transparent 5px 9px,#c9c6bc 9px 12px,transparent 12px 14px,#c9c6bc 14px 15px,transparent 15px 17px)}
 /* evidence plates: "no signal" static shows behind the picture if it ever fails to load */
@@ -391,47 +391,56 @@ h1[tabindex="-1"]:focus{outline:none}
 #settings{position:fixed;inset:0;z-index:93;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.74);backdrop-filter:blur(3px)}
 .panel{width:min(100%,580px);max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;padding:26px;border:1px solid #3a1210;border-top:2px solid var(--hot);background:linear-gradient(180deg,#0d0f0f,#070808);box-shadow:0 0 60px rgba(0,0,0,.8)}
 .phead{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px}
-.phead h2{font-size:36px;margin-top:6px}
-.x{width:44px;height:44px;border:1px solid var(--line);color:var(--soft);font-size:16px;flex:none}
+.phead h2{font-size:calc(36px * var(--ts));margin-top:6px}
+.x{width:44px;height:44px;border:1px solid var(--line);color:var(--soft);font-size:calc(16px * var(--ts));flex:none}
 .x:hover{border-color:var(--hot);color:var(--text)}
 .grp{margin:0 0 18px;padding:16px 0 0;border:0;border-top:1px solid var(--rule);min-width:0}
-.grp>legend,.grp>.gt{padding:0;margin:0 0 12px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--hot);font-family:inherit;font-weight:400}
+.grp>legend,.grp>.gt{padding:0;margin:0 0 12px;font-size:calc(10px * var(--ts));letter-spacing:.24em;text-transform:uppercase;color:var(--hot);font-family:inherit;font-weight:400}
 fieldset.grp>legend{float:left;width:100%}
-fieldset.grp>.opts{clear:both}
+fieldset.grp>.opts,fieldset.grp>.tsz{clear:both}
+.tsz{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tsz{min-width:0}
+.tsz .opt{grid-template-columns:1fr;justify-items:center;text-align:center;gap:8px;min-width:0;padding:12px 8px}
+.tsz .opt b{font-size:calc(12px * var(--ts))}
 .line{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:44px}
-.line .sub{display:block;margin-top:4px;font-size:11px;line-height:1.5;color:var(--soft)}
+.line .sub{display:block;margin-top:4px;font-size:calc(11px * var(--ts));line-height:1.5;color:var(--soft)}
 .sw{position:relative;width:54px;height:30px;flex:none;border:1px solid var(--line);background:#050707;transition:border-color .2s}
 .sw i{position:absolute;top:3px;left:3px;width:22px;height:22px;background:var(--soft);transition:transform .2s,background .2s}
 .sw[aria-checked="true"]{border-color:var(--hot)}
 .sw[aria-checked="true"] i{transform:translateX(24px);background:var(--hot)}
 #set-vol{width:100%;height:32px;margin:4px 0 0;accent-color:var(--hot);cursor:pointer}
-#set-vol-out{font-size:12px;color:var(--text);min-width:4ch;text-align:right}
+#set-vol-out{font-size:calc(12px * var(--ts));color:var(--text);min-width:4ch;text-align:right}
 .opts{display:grid;gap:8px}
 .opt{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--rule);background:#060808;cursor:pointer;transition:border-color .2s,background .2s}
 .opt:hover{border-color:var(--line)}
 .opt:has(input:checked){border-color:var(--hot);background:#0b0f0e}
 .opt:has(input:focus-visible){outline:2px solid var(--hot);outline-offset:2px}
 .opt input{width:18px;height:18px;margin:0;accent-color:var(--hot)}
-.opt b{display:block;font-size:12px;letter-spacing:.06em;color:var(--text)}
-.opt .od{display:block;margin-top:3px;font-size:11px;line-height:1.5;color:var(--soft)}
+.opt b{display:block;font-size:calc(12px * var(--ts));letter-spacing:.06em;color:var(--text)}
+.opt .od{display:block;margin-top:3px;font-size:calc(11px * var(--ts));line-height:1.5;color:var(--soft)}
 .pv{display:inline-flex;align-items:center;gap:3px}
 .pv s{display:block;width:10px;height:10px;margin-right:6px;background:rgb(var(--r-e04a3e));text-decoration:none}
 .pv i{display:block;width:10px;height:10px}
 .pfoot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:18px;border-top:1px solid var(--rule)}
 .pfoot .btn{min-height:44px;padding:10px 20px}
-.dossier h3.sub{font-family:"Cormorant Garamond","Special Elite",serif;font-weight:600;font-size:24px;letter-spacing:.03em;margin:36px 0 0;color:#d9cfc4}
+.dossier h3.sub{font-family:"Cormorant Garamond","Special Elite",serif;font-weight:600;font-size:calc(24px * var(--ts));letter-spacing:.03em;margin:36px 0 0;color:#d9cfc4}
 .dossier .main p.step{padding-left:14px;border-left:1px solid var(--red)}
 
 /* ===== SETTINGS: reduced motion / flashing (same rules as the OS preference, but switchable here) ===== */
 html.rm,html.rm *,html.rm *:before,html.rm *:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 html.rm #boot,html.rm #veil,html.rm #unseal{display:none!important}
+/* text size: only font sizes scale, layout stays as designed */
+:root{--ts:1}
+html[data-ts="1.15"]{--ts:1.15}
+html[data-ts="1.3"]{--ts:1.3}
 </style>
 <script>
 /* apply saved settings before the page paints (colour mode + reduced motion) */
 try{var __s=JSON.parse(localStorage.getItem("cmrf-settings")||"{}"),__h=document.documentElement;
 if(["prot","deut","trit"].indexOf(__s.cb)>-1)__h.setAttribute("data-cb",__s.cb);
 var __rm=typeof __s.rm==="boolean"?__s.rm:(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches);
-if(__rm)__h.classList.add("rm");}catch(e){}
+if(__rm)__h.classList.add("rm");
+if(["1.15","1.3"].indexOf(__s.ts)>-1)__h.setAttribute("data-ts",__s.ts);}catch(e){}
 </script>
 </head>
 <body>
@@ -595,4 +604,701 @@ if(__rm)__h.classList.add("rm");}catch(e){}
       <div class="line">
         <span id="lbl-snd">Ambient sound<span class="sub">Low drone and faint static, generated in your browser.</span></span>
         <button type="button" role="switch" id="set-sound" class="sw" aria-checked="false" aria-labelledby="lbl-snd"><i></i></button>
-      </... (50 KB left)
+      </div>
+      <div class="line"><label for="set-vol">Volume</label><output id="set-vol-out" for="set-vol">60%</output></div>
+      <input id="set-vol" type="range" min="0" max="100" step="1" value="60" aria-describedby="vol-hint">
+      <p class="sub small soft" id="vol-hint" style="margin-top:6px;font-size:calc(11px * var(--ts));letter-spacing:.04em;text-transform:none">Turn sound on to hear changes.</p>
+    </section>
+
+    <fieldset class="grp">
+      <legend>Colour vision</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="cb" value="none" checked><span><b>Standard</b><span class="od">The original red palette and green-to-red danger scale.</span></span><span class="pv" data-pv="none" aria-hidden="true"><s></s><i style="background:var(--lv1)"></i><i style="background:var(--lv2)"></i><i style="background:var(--lv3)"></i><i style="background:var(--lv4)"></i><i style="background:var(--lv5)"></i></span></label>
+        <label class="opt"><input type="radio" name="cb" value="deut"><span><b>Deuteranopia</b><span class="od">Green-weak, the most common type. Accents turn amber; danger runs blue to white.</span></span><span class="pv" data-pv="deut" aria-hidden="true"><s></s><i style="background:var(--lv1)"></i><i style="background:var(--lv2)"></i><i style="background:var(--lv3)"></i><i style="background:var(--lv4)"></i><i style="background:var(--lv5)"></i></span></label>
+        <label class="opt"><input type="radio" name="cb" value="prot"><span><b>Protanopia</b><span class="od">Red-weak, so reds look dark. Accents turn blue; danger runs blue to white.</span></span><span class="pv" data-pv="prot" aria-hidden="true"><s></s><i style="background:var(--lv1)"></i><i style="background:var(--lv2)"></i><i style="background:var(--lv3)"></i><i style="background:var(--lv4)"></i><i style="background:var(--lv5)"></i></span></label>
+        <label class="opt"><input type="radio" name="cb" value="trit"><span><b>Tritanopia</b><span class="od">Blue-yellow, the rarest of the three. Danger runs teal to red.</span></span><span class="pv" data-pv="trit" aria-hidden="true"><s></s><i style="background:var(--lv1)"></i><i style="background:var(--lv2)"></i><i style="background:var(--lv3)"></i><i style="background:var(--lv4)"></i><i style="background:var(--lv5)"></i></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="grp">
+      <legend>Text size</legend>
+      <div class="tsz">
+        <label class="opt"><input type="radio" name="ts" value="1" checked><span><b>Default</b></span></label>
+        <label class="opt"><input type="radio" name="ts" value="1.15"><span><b>Large</b></span></label>
+        <label class="opt"><input type="radio" name="ts" value="1.3"><span><b>Largest</b></span></label>
+      </div>
+    </fieldset>
+
+    <section class="grp" aria-labelledby="gt-motion">
+      <h3 class="gt" id="gt-motion">Motion</h3>
+      <div class="line">
+        <span id="lbl-rm">Reduce motion &amp; flashing<span class="sub">Turns off the boot sequence, screen flicker, scan sweeps and film grain movement. Starts on if your device asks for reduced motion.</span></span>
+        <button type="button" role="switch" id="set-rm" class="sw" aria-checked="false" aria-labelledby="lbl-rm"><i></i></button>
+      </div>
+    </section>
+
+    <div class="pfoot">
+      <button type="button" id="set-reset" class="btn ghost">RESET TO DEFAULT</button>
+      <button type="button" id="set-done" class="btn">DONE</button>
+    </div>
+  </div>
+</div>
+
+<noscript><style>.gate{display:none!important}</style></noscript>
+
+<script>
+/* ===== ENTRY GATE + ERROR BANNER =====
+   This small script runs FIRST and on its own, so the ACKNOWLEDGE button keeps working even if a typo
+   (a missing quote or comma) slips into the entity data further down. If that happens, a red bar at the
+   top of the page tells you the error and the line number, so you know exactly what to fix. */
+(function () {
+  var gate = document.getElementById("gate"), btn = document.getElementById("gate-btn");
+  function lock(on) { ["header", "main", "footer"].forEach(function (t) { var el = document.querySelector(t); if (el) el.inert = on; }); }
+  var seen = false;
+  try { seen = !!sessionStorage.getItem("cmrf-ack"); } catch (e) {}
+  gate.hidden = seen; lock(!seen);
+  btn.addEventListener("click", function () {
+    gate.hidden = true; lock(false);
+    try { sessionStorage.setItem("cmrf-ack", "1"); } catch (e) {}
+  });
+  if (!seen) btn.focus();
+  var shown = false;
+  window.addEventListener("error", function (e) {
+    if (shown || !e.message) return;
+    shown = true;
+    var bar = document.createElement("div");
+    bar.setAttribute("role", "alert");
+    bar.style.cssText = "position:fixed;left:0;right:0;top:0;z-index:100;padding:12px 16px;background:#b85d55;color:#101514;font:700 13px/1.5 monospace";
+    bar.textContent = "Code error: " + e.message + (e.lineno ? " (line " + e.lineno + ")" : "") + ". Check the last thing that was edited. A missing quote or comma is the usual cause.";
+    document.body.appendChild(bar);
+  });
+})();
+</script>
+
+<script>
+/* ===== SETTINGS ===== */
+// Reports are sent here. Change this to your own address.
+const SUBMISSION_EMAIL = "controlled.MRF@gmail.com";
+// Optional: paste a Formspree (or similar) endpoint, e.g. "https://formspree.io/f/xxxxxxx".
+// If set, reports send directly from the page. If empty, the visitor's email app opens instead.
+const FORM_ENDPOINT = "";
+
+/* ===== LABELS (rename these if you like) ===== */
+// The three filter categories. Left side = the word you type in an entity's "type" line. Right side = what visitors see.
+const TYPES  = { place: "Place", creature: "Creature", object: "Object" };
+// The danger scale. Number = what you type in an entity's "danger" line. Right side = what visitors see.
+const DANGER = { 1: "Harmless", 2: "Low", 3: "Moderate", 4: "High", 5: "Extreme" };
+
+/* ============================================================================================
+   HOW TO EDIT AN ENTITY
+   --------------------------------------------------------------------------------------------
+   Every entity is one block between { and }, and every line has an arrow  ◀  saying what it changes.
+   Only change the text INSIDE the quote marks (or the number for danger). Keep the quotes and commas.
+
+   TIP: press Ctrl+F (Cmd+F on Mac) and search "FILE 003" to jump straight to that entity.
+
+   type     must be exactly:  "place"  "creature"  or  "object"
+   danger   a number from 1 to 5   (1 = harmless ... 5 = extreme)
+   A short line with no full stop on its own becomes a sub-heading.
+   Paragraphs: type \n\n inside description / evidence / notes to start a new paragraph.
+   Leave any line as ""  to show a grey [Placeholder] until you write something.
+   REDACTIONS: wrap words in double brackets inside any text, e.g.  "seen near [[the old reservoir]] at night"
+               They show as a dark bar and reveal when hovered, tapped or focused.
+   OPTIONAL extra lines you can add to an entity (both can be left out):
+     updated: "14 March 1994",   // ◀ shows as LAST REVISED. Left out = shows "DATA EXPUNGED"
+     related: [2, 5],            // ◀ file numbers to link at the bottom. Left out = picks nearby files automatically
+
+   TO ADD AN ENTITY: copy a whole block (from { to }, plus its comma) and paste it under the last one.
+   TO REMOVE ONE: delete its whole block. File numbers follow the order, so they shift up by themselves.
+   ============================================================================================ */
+const IMG = "https://images.pexels.com/photos/167964/pexels-photo-167964.jpeg?auto=compress&cs=tinysrgb&w=800";
+const CASES = [
+
+  {
+    // ═════════════════════ FILE 001 ═════════════════════
+    name:           "THE TRADER",           // ◀ NAME
+    type:           "creature",             // ◀ TYPE: "place", "creature" or "object"
+    danger:         3,                      // ◀ DANGER: 1 to 5
+    dangerNote:     "",                     // ◀ WHY IT HAS THIS DANGER RATING (one sentence)
+    summary:        "A figure seen beside abandoned roadside cameras.",  // ◀ SHORT DESCRIPTION (shown on the list)
+    location:       "",                     // ◀ LOCATION (e.g. "Norfolk Fens")
+    classification: "",                     // ◀ STAMP ON THE FILE (e.g. "RESTRICTED"). Blank = "LEVEL 3"
+    // ◀ FULL DESCRIPTION (section 01). One paragraph per line. Each line ends with \n\n and a + sign, except the last.
+    description:    "THE TRADER is a sapient anomalous entity that resides within a single enclosed structure, referred to as the Exchange. From the outside, the Exchange appears to be an unremarkable one-room building roughly six metres by eight metres, with a single wooden door, no windows and no visible means of ventilation. Surveyors who have walked the perimeter report that the building casts no shadow regardless of the time of day. Instruments register no heat, no sound and no electromagnetic activity from the exterior.\n\n" +
+                          "The interior is a different matter. Every subject who has crossed the threshold describes a space far larger than the exterior allows: a long hall lit by a warm amber light with no visible source, lined on both sides with shelves, drawers, cabinets and glass cases. The objects on display vary between accounts, but all subjects agree on two things. First, the hall smells faintly of old coins and beeswax. Second, the door they entered by is no longer there when they turn around.\n\n" +
+                          "At the far end of the hall stands THE TRADER. Descriptions are consistent in broad strokes and inconsistent in detail. It is humanoid, tall (estimates range from 2.1 to 2.6 metres) and thin to the point of looking stretched. It wears a long coat of a colour no two subjects have described the same way. Its face is the least reliable element. Several subjects report that it looks like someone you almost know. Two subjects reported that it had no face at all and only realised this after leaving. All subjects agree that it smiles, and that the smile is polite rather than threatening.\n\n" +
+                          "THE TRADER speaks in a calm, courteous, slightly formal manner. It addresses each subject by a name they were given only in childhood, a nickname, or in some cases a name they have never told anyone. It never raises its voice, never makes threats and never uses force. It does not need to.\n\n" +
+                          "The Rule of Exchange\n\n" +
+                          "Once a subject has entered the Exchange, they cannot leave until a trade has been completed. This is the only constraint, and it is absolute. The subject may remain inside indefinitely, may refuse to speak, and may attempt to break, burn or dig through the walls. None of these actions have had any effect on the structure or on THE TRADER, and no subject has been able to locate the entrance again by physical means. THE TRADER has never been observed to become impatient.\n\n" +
+                          "A trade proceeds in the following way:\n\n" +
+                          "1. THE TRADER informs the subject, politely, that a trade is required before they may leave.\n\n" +
+                          "2. THE TRADER selects a part of the subject body. The subject does not choose. Selection appears to be random, though some analysts in our department argue it is not random at all (see the researcher notes). Items taken have included fingers, a tooth, a patch of skin, an ear, a single eye, a sense of taste, a kidney, and in one case the back half of a left foot.\n\n" +
+                          "3. The removal is painless and bloodless. Subjects report a feeling similar to a sneeze or a held breath being released. The wound is closed cleanly, and in some cases it looks as though the missing part was never there.\n\n" +
+                          "4. THE TRADER places an object in the hands of the subject, which it describes as fair value. The object is always something it has judged to be of equal worth to what it took.\n\n" +
+                          "5. The door reappears behind the subject, and THE TRADER thanks them for their business.\n\n" +
+                          "The concept of value used by THE TRADER does not follow any economic or practical logic we have been able to identify. A subject who surrendered a fingertip received a small brass key that opens nothing we have found. A subject who surrendered an eye received a handwritten letter from a deceased relative. A subject who surrendered a tooth received a jar of warm sand that has not cooled in fourteen months. The items appear to be genuine rather than illusions, and none have so far proven directly harmful, although the long-term effects of several are still under observation.",
+    // ◀ SIGHTINGS & EVIDENCE (section 02). One paragraph per line. Each line ends with \n\n and a + sign, except the last.
+    evidence:       "Item E-01: Initial survey photographs. Taken by Field Team Delta on first approach. Exterior photographs show a standard structure. A second set, taken by the same cameras ninety seconds later from the same positions, shows the door slightly open. No team member opened it. The audio logs of the team show no sound during this period.\n\n" +
+                          "Item E-02: Interview transcript, Subject 1 (civilian, male, aged 54). Subject 1 entered on his own after seeing the open door from the road. He was inside for approximately eleven hours by his own estimate. Our records show he was gone for four minutes. Excerpt from his statement:\n\n" +
+                          "He was not rude, you understand. That is what I keep trying to tell people. He was the most polite man I have ever met. He said he was sorry, but I could not go until we had done our business. I said I did not have any business. He said everyone has business. Then he asked if I would mind terribly if he took the little finger.\n\n" +
+                          "Subject 1 lost the little finger of his right hand. In exchange he received a pocket watch that keeps perfect time but runs backwards. The watch is now catalogued as Item E-03.\n\n" +
+                          "Item E-03: Recovered object, pocket watch of Subject 1. Tested at three separate laboratories. Results are consistent: the mechanism is not clockwork and not electronic, and no energy source has been found. The hands move anticlockwise at the correct rate. The inscription on the back reads, in handwriting that matches that of Subject 1, the words Time you will want back. Subject 1 had never seen this writing before.\n\n" +
+                          "Item E-04: Surveillance footage, Subject 4 (D-class volunteer, authorised entry). The subject entered wearing a body camera and a tether line. The tether did not tighten at any stage and no resistance was recorded, but when it was recovered, forty metres of line were found coiled neatly at the threshold, cut clean. The body camera footage consists of 19 minutes of an unlit corridor, with the audio of a calm male voice repeating only one sentence: Please, take your time. I am in no hurry. A further three minutes of footage show the interior, but the file was corrupted on playback. Technicians reported that each time the file was opened the image was slightly different.\n\n" +
+                          "Item E-05: Medical report, Subject 4. The subject lost the sense of taste. No physical damage could be found. In exchange the subject was given a small glass vial containing a clear liquid, which, when tasted by a second volunteer, produced a vivid memory of a meal the subject had eaten as a child. The second volunteer had never met Subject 4 and described the memory as definitely not mine, but real.\n\n" +
+                          "Item E-06: Written statement, Dr. A. Halloran. Dr. Halloran, a senior analyst, observed that every item exchanged appears to be personal to the subject in some way. This applies even to objects that look generic. She wrote that THE TRADER is not pricing the body part. It is pricing what the person has lost, or could lose. She concluded that it knows exactly what each of them can afford.\n\n" +
+                          "Item E-07: Exit analysis. Across all recorded entries, no subject has left without a trade, and no subject has been refused one. In the one instance where a subject attempted to offer a different body part than the one selected, the offer was acknowledged and politely declined. THE TRADER replied that this would be a different trade and that it had already begun this one.",
+    notes:          "",                     // ◀ FIELD NOTES (section 03)
+    image:          "",                     // ◀ IMAGE LINK (blank = default image)
+    caption:        "",                     // ◀ IMAGE CAPTION / CREDIT
+    teaser:         ""                      // ◀ COVER-PAGE TEASER (only File 001 is used for this)
+  },
+
+  {
+    // ═════════════════════ FILE 002 ═════════════════════
+    name:           "THE FEN LANTERN",      // ◀ NAME
+    type:           "creature",             // ◀ TYPE: "place", "creature" or "object"
+    danger:         2,                      // ◀ DANGER: 1 to 5
+    dangerNote:     "",                     // ◀ WHY IT HAS THIS DANGER RATING (one sentence)
+    summary:        "A moving light that appears above unmarked water.", // ◀ SHORT DESCRIPTION (shown on the list)
+    location:       "",                     // ◀ LOCATION
+    classification: "",                     // ◀ STAMP ON THE FILE
+    description:    "",                     // ◀ FULL DESCRIPTION (section 01)
+    evidence:       "",                     // ◀ SIGHTINGS & EVIDENCE (section 02)
+    notes:          "",                     // ◀ FIELD NOTES (section 03)
+    image:          "",                     // ◀ IMAGE LINK
+    caption:        ""                      // ◀ IMAGE CAPTION / CREDIT
+  },
+
+  {
+    // ═════════════════════ FILE 003 ═════════════════════
+    name:           "THE ASH ORCHARD",      // ◀ NAME
+    type:           "place",                // ◀ TYPE: "place", "creature" or "object"
+    danger:         4,                      // ◀ DANGER: 1 to 5
+    dangerNote:     "",                     // ◀ WHY IT HAS THIS DANGER RATING (one sentence)
+    summary:        "A silhouette recorded among trees that no longer stand.", // ◀ SHORT DESCRIPTION (shown on the list)
+    location:       "",                     // ◀ LOCATION
+    classification: "",                     // ◀ STAMP ON THE FILE
+    description:    "",                     // ◀ FULL DESCRIPTION (section 01)
+    evidence:       "",                     // ◀ SIGHTINGS & EVIDENCE (section 02)
+    notes:          "",                     // ◀ FIELD NOTES (section 03)
+    image:          "",                     // ◀ IMAGE LINK
+    caption:        ""                      // ◀ IMAGE CAPTION / CREDIT
+  },
+
+  {
+    // ═════════════════════ FILE 004 ═════════════════════
+    name:           "THE SALT STAIR",       // ◀ NAME
+    type:           "place",                // ◀ TYPE: "place", "creature" or "object"
+    danger:         2,                      // ◀ DANGER: 1 to 5
+    dangerNote:     "",                     // ◀ WHY IT HAS THIS DANGER RATING (one sentence)
+    summary:        "Wet prints descending a dry coastal staircase.", // ◀ SHORT DESCRIPTION (shown on the list)
+    location:       "",                     // ◀ LOCATION
+    classification: "",                     // ◀ STAMP ON THE FILE
+    description:    "",                     // ◀ FULL DESCRIPTION (section 01)
+    evidence:       "",                     // ◀ SIGHTINGS & EVIDENCE (section 02)
+    notes:          "",                     // ◀ FIELD NOTES (section 03)
+    image:          "",                     // ◀ IMAGE LINK
+    caption:        ""                      // ◀ IMAGE CAPTION / CREDIT
+  },
+
+  {
+    // ═════════════════════ FILE 005 ═════════════════════
+    name:           "THE WIRE CHOIR",       // ◀ NAME
+    type:           "object",               // ◀ TYPE: "place", "creature" or "object"
+    danger:         3,                      // ◀ DANGER: 1 to 5
+    dangerNote:     "",                     // ◀ WHY IT HAS THIS DANGER RATING (one sentence)
+    summary:        "Voices heard beneath a disused transmission mast.", // ◀ SHORT DESCRIPTION (shown on the list)
+    location:       "",                     // ◀ LOCATION
+    classification: "",                     // ◀ STAMP ON THE FILE
+    description:    "",                     // ◀ FULL DESCRIPTION (section 01)
+    evidence:       "",                     // ◀ SIGHTINGS & EVIDENCE (section 02)
+    notes:          "",                     // ◀ FIELD NOTES (section 03)
+    image:          "",                     // ◀ IMAGE LINK
+    caption:        ""                      // ◀ IMAGE CAPTION / CREDIT
+  },
+
+  {
+    // ═════════════════════ FILE 006 ═════════════════════
+    name:           "THE BLACK MILE",       // ◀ NAME
+    type:           "object",               // ◀ TYPE: "place", "creature" or "object"
+    danger:         4,                      // ◀ DANGER: 1 to 5
+    dangerNote:     "",                     // ◀ WHY IT HAS THIS DANGER RATING (one sentence)
+    summary:        "An impossible distance between two familiar mileposts.", // ◀ SHORT DESCRIPTION (shown on the list)
+    location:       "",                     // ◀ LOCATION
+    classification: "",                     // ◀ STAMP ON THE FILE
+    description:    "",                     // ◀ FULL DESCRIPTION (section 01)
+    evidence:       "",                     // ◀ SIGHTINGS & EVIDENCE (section 02)
+    notes:          "",                     // ◀ FIELD NOTES (section 03)
+    image:          "",                     // ◀ IMAGE LINK
+    caption:        ""                      // ◀ IMAGE CAPTION / CREDIT
+  },
+
+  {
+    // ═════════════════════ FILE 007 ═════════════════════
+    name:           "THE GLASS ANTLER",     // ◀ NAME
+    type:           "creature",             // ◀ TYPE: "place", "creature" or "object"
+    danger:         5,                      // ◀ DANGER: 1 to 5
+    dangerNote:     "",                     // ◀ WHY IT HAS THIS DANGER RATING (one sentence)
+    summary:        "A reflective shape moving through a winter treeline.", // ◀ SHORT DESCRIPTION (shown on the list)
+    location:       "",                     // ◀ LOCATION
+    classification: "",                     // ◀ STAMP ON THE FILE
+    description:    "",                     // ◀ FULL DESCRIPTION (section 01)
+    evidence:       "",                     // ◀ SIGHTINGS & EVIDENCE (section 02)
+    notes:          "",                     // ◀ FIELD NOTES (section 03)
+    image:          "",                     // ◀ IMAGE LINK
+    caption:        ""                      // ◀ IMAGE CAPTION / CREDIT
+  },
+
+  {
+    // ═════════════════════ FILE 008 ═════════════════════
+    name:           "THE LOW-TIDE GUEST",   // ◀ NAME
+    type:           "creature",             // ◀ TYPE: "place", "creature" or "object"
+    danger:         1,                      // ◀ DANGER: 1 to 5
+    dangerNote:     "",                     // ◀ WHY IT HAS THIS DANGER RATING (one sentence)
+    summary:        "A visitor reported at the edge of an empty estuary.", // ◀ SHORT DESCRIPTION (shown on the list)
+    location:       "",                     // ◀ LOCATION
+    classification: "",                     // ◀ STAMP ON THE FILE
+    description:    "",                     // ◀ FULL DESCRIPTION (section 01)
+    evidence:       "",                     // ◀ SIGHTINGS & EVIDENCE (section 02)
+    notes:          "",                     // ◀ FIELD NOTES (section 03)
+    image:          "",                     // ◀ IMAGE LINK
+    caption:        ""                      // ◀ IMAGE CAPTION / CREDIT
+  }
+
+];
+
+/* ===== HELPERS (no need to edit below this line) ===== */
+const pad = n => String(n).padStart(3, "0");
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const norm = s => String(s ?? "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+// Escapes text so quotes or < > in your writing can't break the page
+const esc = s => String(s ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+// \n\n in your text becomes paragraph breaks
+// Wrap any words in double square brackets, like [[this]], to show them as a redaction bar that reveals on hover/tap
+const redact = h => h.replace(/\[\[([^\]]+?)\]\]/g, '<span class="redact" tabindex="0">$1</span>');
+// A short line with no full stop (like "The Rule of Exchange") becomes a sub-heading; lines starting "1. " get a step rule
+const paras = (s, fallback, cls = "t") => {
+  const real = !!(s && s.trim());
+  return (real ? s.trim().split(/\n\s*\n/) : [fallback]).map(p => {
+    const t = p.trim();
+    if (real && t.length < 60 && !/[.:!?"\u201d]$/.test(t) && !/^\d+\./.test(t)) return `<h3 class="sub">${redact(esc(t))}</h3>`;
+    return `<p class="${cls}${real && /^\d+\.\s/.test(t) ? " step" : ""}">${redact(esc(t))}</p>`;
+  }).join("");
+};
+// Keeps every danger value between 1 and 5 even if a typo sneaks in
+CASES.forEach(c => { c.danger = Math.min(5, Math.max(1, Math.round(Number(c.danger)) || 1)); });
+const typeLabel = c => TYPES[c.type] || String(c.type || "Unknown");
+const dangerText = lv => `Level ${lv} · ${DANGER[lv]}`;
+const meter = lv => `<span class="meter lv-${lv}" aria-hidden="true">${[1,2,3,4,5].map(i => `<i${i <= lv ? ' class="on"' : ""}></i>`).join("")}</span>`;
+
+/* (The entry gate lives in its own small script just above, so it keeps working even if the data below has a typo.) */
+
+/* ===== COVER: summary numbers + teaser ===== */
+const countType = k => CASES.filter(c => c.type === k).length;
+$("#stats").innerHTML = [["Files on register", CASES.length], ...Object.entries(TYPES).map(([k, label]) => [label + "s", countType(k)])]
+  .map(([label, n]) => `<div class="stat"><b>${pad(n).slice(1)}</b><span class="small soft">${esc(label)}</span></div>`).join("");
+$("#teaser-title").textContent = CASES[0].name;
+if (CASES[0].teaser || CASES[0].summary) $("#teaser-text").textContent = CASES[0].teaser || CASES[0].summary;
+
+/* ===== INDEX: filters, sorting and rows ===== */
+const filterForm = $("#filter-form");
+const state = { q: "", type: "all", danger: "all", sort: "num" };
+
+$("#danger-filter").innerHTML = '<option value="all">All danger levels</option>' +
+  [5, 4, 3, 2, 1].map(k => `<option value="${k}">Level ${k} · ${esc(DANGER[k])}</option>`).join("");
+
+function buildChips() {
+  $("#type-chips").innerHTML = ["all", ...Object.keys(TYPES)].map(k => {
+    const n = k === "all" ? CASES.length : countType(k);
+    return `<button type="button" class="chip" data-type="${esc(k)}" aria-pressed="${state.type === k}">${k === "all" ? "All" : esc(TYPES[k])} <span class="n">${n}</span></button>`;
+  }).join("");
+}
+
+function renderRows() {
+  const q = norm(state.q);
+  let list = CASES.map((c, i) => ({ c, n: i + 1 })).filter(({ c, n }) =>
+    (!q || norm(`file ${pad(n)} ${c.name} ${c.summary} ${c.location} ${typeLabel(c)}`).includes(q)) &&
+    (state.type === "all" || c.type === state.type) &&
+    (state.danger === "all" || c.danger === Number(state.danger)));
+  if (state.sort === "danger-desc") list.sort((a, b) => b.c.danger - a.c.danger || a.n - b.n);
+  else if (state.sort === "danger-asc") list.sort((a, b) => a.c.danger - b.c.danger || a.n - b.n);
+  else if (state.sort === "name") list.sort((a, b) => String(a.c.name).localeCompare(String(b.c.name)));
+  $("#rows").innerHTML = list.map(({ c, n }) => `
+    <article class="row" data-danger="${c.danger}">
+      <p class="small hot">FILE / ${pad(n)}</p>
+      <div>
+        <h2>${esc(c.name)}</h2>
+        <p class="tags small soft"><span class="tag">${esc(typeLabel(c))}</span>${c.location ? `<span>${esc(c.location)}</span>` : ""}</p>
+        <p class="s">${esc(c.summary)}</p>
+      </div>
+      <div class="side">
+        <span class="danger small soft">${meter(c.danger)}<span>${esc(dangerText(c.danger))}</span></span>
+        <button type="button" class="link" data-case="${n}">VIEW FILE →</button>
+      </div>
+    </article>`).join("");
+  $("#result-count").textContent = `Showing ${list.length} of ${CASES.length} files`;
+  $("#empty").hidden = list.length > 0;
+}
+
+function readControls() {
+  state.q = $("#case-search").value;
+  state.danger = $("#danger-filter").value;
+  state.sort = $("#sort-by").value;
+}
+filterForm.addEventListener("input", () => { readControls(); renderRows(); });
+filterForm.addEventListener("submit", e => e.preventDefault());
+filterForm.addEventListener("reset", () => setTimeout(() => { state.type = "all"; readControls(); buildChips(); renderRows(); }));
+$("#type-chips").addEventListener("click", e => {
+  const b = e.target.closest("[data-type]");
+  if (!b) return;
+  state.type = b.dataset.type; buildChips(); renderRows();
+  $(`#type-chips [data-type="${state.type}"]`).focus();
+});
+buildChips(); renderRows();
+
+/* ===== RENDER DETAIL ===== */
+function relatedIds(c, id) {
+  const manual = Array.isArray(c.related) ? c.related.map(Number).filter(k => k !== id && CASES[k - 1]) : [];
+  if (manual.length) return manual.slice(0, 4);
+  return CASES.map((x, i) => ({ x, k: i + 1 })).filter(o => o.k !== id)
+    .sort((a, b) => ((b.x.type === c.type) - (a.x.type === c.type)) || Math.abs(a.k - id) - Math.abs(b.k - id))
+    .slice(0, 3).map(o => o.k);
+}
+function relBlock(c, id) {
+  const ids = relatedIds(c, id);
+  if (!ids.length) return "";
+  return `<h2>05 / Related files</h2><div class="related">${ids.map(k => { const r = CASES[k - 1]; return `
+    <button type="button" class="rel" data-case="${k}"><span class="small hot">FILE / ${pad(k)}</span><b>${esc(r.name)}</b><span class="small soft">${esc(typeLabel(r))} · ${esc(dangerText(r.danger))}</span></button>`; }).join("")}</div>`;
+}
+function renderCase(id) {
+  const c = CASES[id - 1], n = pad(id), ref = "CMRF-" + n + "-" + String(c.type || "X").charAt(0).toUpperCase();
+  $("#dossier").innerHTML = `
+    <div class="head"><p class="small">C-MRF / Archive record / Public copy</p><p class="small stamp">Classification: ${esc(c.classification || "Level " + c.danger)}</p></div>
+    <div class="grid">
+      <div class="main">
+        <h1 id="case-title" tabindex="-1">${esc(c.name)}</h1>
+        <p class="meta">FILE / ${n} · ${esc(typeLabel(c).toUpperCase())} · ${esc(c.location || "[ADD LOCATION]")}</p>
+        <dl class="docmeta">
+          <div><dt>Reference</dt><dd>${ref}</dd></div>
+          <div><dt>Access</dt><dd>Public copy · redacted</dd></div>
+          <div><dt>Last revised</dt><dd>${c.updated ? esc(c.updated) : '<span class="redact static">DATA EXPUNGED</span>'}</dd></div>
+          <div><dt>Custodian</dt><dd><span class="redact static">██████████</span></dd></div>
+        </dl>
+        <div class="threat lv-${c.danger}">
+          <p class="small">Danger rating</p>
+          <p class="danger">${meter(c.danger)}<b class="lvl-text">${esc(dangerText(c.danger).toUpperCase())}</b></p>
+          <p class="t">${redact(esc(c.dangerNote || "[Placeholder: explain why this entity has this danger rating.]"))}</p>
+        </div>
+        <h2>01 / Description</h2>${paras(c.description, "[Placeholder: describe " + String(c.name).toLowerCase() + ", its reported appearance and the circumstances of its discovery.]")}
+        <h2>02 / Sightings &amp; evidence</h2>${paras(c.evidence, "[Placeholder: add witness accounts, dates, recordings and contradictions.]")}
+        <h2>03 / Field notes</h2>${paras(c.notes, "[Placeholder: add observation protocol, unresolved questions and a closing note.]")}
+        <h2>04 / Addendum</h2>
+        <div class="addendum" role="note" aria-label="Section restricted. Clearance insufficient.">
+          <p class="small">Section restricted · clearance insufficient</p>
+          <div class="redline" aria-hidden="true"></div><div class="redline" aria-hidden="true"></div><div class="redline" aria-hidden="true"></div><div class="redline" aria-hidden="true"></div>
+        </div>
+        ${relBlock(c, id)}
+        <nav class="pager" aria-label="Other files">
+          ${id > 1 ? `<button type="button" class="link" data-case="${id - 1}">← FILE ${pad(id - 1)}</button>` : "<span></span>"}
+          ${id < CASES.length ? `<button type="button" class="link" data-case="${id + 1}">FILE ${pad(id + 1)} →</button>` : "<span></span>"}
+        </nav>
+      </div>
+      <aside aria-label="Case ${n} evidence plate">
+        <p class="small">EVIDENCE / PLATE ${n}</p>
+        <div class="plate"><img src="${esc(c.image || IMG)}" alt="Evidence image for case ${n}" loading="lazy" onerror="this.style.display='none'"><span class="small">${c.image ? "Plate " + n : "[Replace case image]"}</span></div>
+        <p class="credit" style="font-size:calc(11px * var(--ts))">${esc(c.caption || "[IMAGE CAPTION / CREDIT / SOURCE]")}</p>
+        <div class="barcode" aria-hidden="true"></div><p class="small soft" style="margin-top:8px;font-size:calc(9px * var(--ts))">${ref} · ARCHIVE COPY</p>
+      </aside>
+    </div>`;
+}
+
+/* ===== ROUTING (hash-based, so back button + links work) ===== */
+function show(view, caseId) {
+  $$("[data-page]").forEach(p => p.hidden = p.id !== view + "-view");
+  $$("nav button").forEach(b => b.dataset.view === (view === "detail" ? "index" : view)
+    ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current"));
+  if (view === "detail") renderCase(caseId);
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  const h = $(view === "detail" ? "#case-title" : `#${view}-view h1`);
+  if (h) h.focus({preventScroll: true});
+}
+function route() {
+  const h = location.hash.slice(1), m = h.match(/^case-(\d+)$/);
+  if (m && CASES[m[1] - 1]) return show("detail", +m[1]);
+  show(["index", "submit"].includes(h) ? h : "home");
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-view],[data-case]");
+  if (!b) return;
+  const target = b.dataset.case ? "case-" + b.dataset.case : (b.dataset.view === "home" ? "" : b.dataset.view);
+  if (location.hash.slice(1) === target) route(); else location.hash = target;
+});
+window.addEventListener("hashchange", route);
+route();
+
+/* ===== SUBMISSION FORM ===== */
+const form = $("#sighting-form"), formStatus = $("#form-status"), desc = $("#f-desc");
+desc.addEventListener("input", () => $("#count").textContent = desc.value.length);
+function say(msg, type) { formStatus.textContent = msg; formStatus.className = "status " + type; formStatus.hidden = false; }
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  if ($("#f-trap").value) return; // spam trap
+  const title = $("#f-title").value.trim(), text = desc.value.trim(), reply = $("#f-reply").value.trim();
+  if (!title || !text) return say("Add a title and a description before sending.", "err");
+  if (reply && !$("#f-reply").checkValidity()) return say("That email address doesn't look right. Fix it or leave it blank.", "err");
+
+  const data = {
+    title, description: text,
+    date: $("#f-date").value || "Not given",
+    location: $("#f-loc").value.trim() || "Not given",
+    name: $("#f-name").value.trim() || "Anonymous",
+    email: reply || "Not given"
+  };
+
+  if (FORM_ENDPOINT) {
+    const btn = $("#send-btn"); btn.disabled = true;
+    try {
+      const res = await fetch(FORM_ENDPOINT, {method: "POST", headers: {"Content-Type": "application/json", "Accept": "application/json"}, body: JSON.stringify({...data, _subject: "C-MRF sighting: " + title})});
+      if (!res.ok) throw new Error();
+      form.reset(); $("#count").textContent = 0;
+      say("Sighting sent. Thank you. It is now with the archive team.", "ok");
+    } catch (err) {
+      say("The report didn't send. Check your connection and try again.", "err");
+    }
+    btn.disabled = false;
+    return;
+  }
+
+  // ---- No endpoint set: send by email (mailto), with Gmail + copy fallbacks ----
+  const subject = "C-MRF sighting: " + title;
+  const body = `Title: ${data.title}\nDate: ${data.date}\nLocation: ${data.location}\nName: ${data.name}\nReply email: ${data.email}\n\nDescription:\n${data.description}`;
+  const enc = encodeURIComponent;
+  const mailto = `mailto:${SUBMISSION_EMAIL}?subject=${enc(subject)}&body=${enc(body)}`;
+  const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${enc(SUBMISSION_EMAIL)}&su=${enc(subject)}&body=${enc(body)}`;
+  const fullReport = `To: ${SUBMISSION_EMAIL}\nSubject: ${subject}\n\n${body}`;
+
+  // Try the visitor's default email app (a real link click is more reliable than changing location)
+  const a = document.createElement("a");
+  a.href = mailto; a.style.display = "none";
+  document.body.appendChild(a); a.click(); a.remove();
+
+  // Always show the other ways to send, in case no email app opened
+  formStatus.textContent = "";
+  formStatus.className = "status ok";
+  formStatus.appendChild(document.createTextNode("Your report is ready to send to " + SUBMISSION_EMAIL + ". If your email app opened, press send there. If nothing opened, use one of these:"));
+  const g = document.createElement("a");
+  g.className = "link"; g.href = gmail; g.target = "_blank"; g.rel = "noopener"; g.textContent = "OPEN IN GMAIL ↗";
+  const c = document.createElement("button");
+  c.type = "button"; c.className = "link"; c.textContent = "COPY REPORT";
+  c.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(fullReport); c.textContent = "COPIED ✓"; }
+    catch (err) {
+      const t = document.createElement("textarea"); t.value = fullReport; document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); c.textContent = "COPIED ✓"; } catch (e2) { c.textContent = "COPY FAILED - SELECT TEXT MANUALLY"; }
+      t.remove();
+    }
+  });
+  const opts = document.createElement("div");
+  opts.className = "opts"; opts.append(g, c);
+  formStatus.appendChild(opts);
+  formStatus.hidden = false;
+});
+</script>
+<script>
+/* ===== MOTION (visual only: boot, unseal, page transitions, button clicks) ===== */
+(function () {
+  var html = document.documentElement, body = document.body;
+  function R() { return html.classList.contains("rm"); } /* set by Settings or the OS preference */
+  var loadTimer;
+  var boot = document.getElementById("boot"), veil = document.getElementById("veil");
+  function restart(el, cls, ms) { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); if (ms) setTimeout(function () { el.classList.remove(cls); }, ms); }
+  if (boot) setTimeout(function () { boot.remove(); }, 3000);
+  /* site powers on behind the boot screen */
+  if (!R()) {
+    body.classList.add("powerup", "load");
+    loadTimer = setTimeout(function () { body.classList.remove("powerup", "load"); }, 3600);
+  }
+
+  /* after ACKNOWLEDGE & ENTER: archive-unsealed flash, then the site flickers on */
+  var gb = document.getElementById("gate-btn");
+  if (gb) gb.addEventListener("click", function () {
+    clearTimeout(loadTimer);
+    if (R()) return;
+    body.classList.remove("powerup", "load"); void body.offsetWidth; body.classList.add("powerup");
+    html.classList.add("unsealing");
+    setTimeout(function () { html.classList.remove("unsealing"); }, 1600);
+    setTimeout(function () { body.classList.remove("powerup"); }, 2500);
+  });
+
+  /* page changes: scan sweep + the visible page re-materialises */
+  var last = 0;
+  function swap() {
+    if (R()) return;
+    var n = Date.now(); if (n - last < 200) return; last = n;
+    if (veil) restart(veil, "go", 800);
+    var pg = Array.prototype.find.call(document.querySelectorAll("[data-page]"), function (p) { return !p.hidden; });
+    if (pg) { pg.style.animation = "none"; void pg.offsetWidth; pg.style.animation = ""; }
+  }
+  window.addEventListener("hashchange", swap);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-view],[data-case]");
+    if (!b) return;
+    var t = b.dataset.case ? "case-" + b.dataset.case : (b.dataset.view === "home" ? "" : b.dataset.view);
+    if (location.hash.slice(1) === t) swap(); /* same page: no hashchange will fire */
+  });
+
+  /* button presses: red ripple on solid buttons/chips, glitch jolt on every button/link */
+  document.addEventListener("pointerdown", function (e) {
+    var t = e.target.closest(".btn");
+    if (R() || !t || t.disabled) return;
+    var r = t.getBoundingClientRect(), d = Math.max(r.width, r.height) * 2.2, s = document.createElement("span");
+    s.className = "ripple";
+    s.style.cssText = "width:" + d + "px;height:" + d + "px;left:" + (e.clientX - r.left - d / 2) + "px;top:" + (e.clientY - r.top - d / 2) + "px";
+    t.appendChild(s); setTimeout(function () { s.remove(); }, 750);
+  });
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest(".btn,nav button,.link");
+    if (!t || R()) return;
+    restart(t, "zap", 500);
+  });
+})();
+</script>
+<script>
+/* ===== SETTINGS: volume, colour vision, reduced motion (saved in this browser) ===== */
+(function () {
+  var KEY = "cmrf-settings", html = document.documentElement;
+  var s = { vol: 60, cb: "none", rm: null, ts: "1" };
+  try {
+    var raw = JSON.parse(localStorage.getItem(KEY) || "{}");
+    if (typeof raw.vol === "number") s.vol = Math.min(100, Math.max(0, raw.vol));
+    if (["prot", "deut", "trit"].indexOf(raw.cb) > -1) s.cb = raw.cb;
+    if (typeof raw.rm === "boolean") s.rm = raw.rm;
+    if (["1.15", "1.3"].indexOf(raw.ts) > -1) s.ts = raw.ts;
+  } catch (e) {}
+  var mq = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)");
+  var panel = document.getElementById("settings"), gear = document.getElementById("gear"), gate = document.getElementById("gate");
+  var vol = document.getElementById("set-vol"), volOut = document.getElementById("set-vol-out");
+  var swSound = document.getElementById("set-sound"), swRm = document.getElementById("set-rm"), snd = document.getElementById("snd");
+  var radios = Array.prototype.slice.call(document.querySelectorAll('input[name="cb"]'));
+  var tsRadios = Array.prototype.slice.call(document.querySelectorAll('input[name="ts"]'));
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {} }
+  function apply() {
+    window.CMRF_VOL = s.vol / 100;
+    document.dispatchEvent(new Event("cmrf:volume"));
+    if (s.cb === "none") html.removeAttribute("data-cb"); else html.setAttribute("data-cb", s.cb);
+    var rm = s.rm === null ? !!(mq && mq.matches) : s.rm;
+    html.classList.toggle("rm", rm);
+    vol.value = s.vol; volOut.textContent = s.vol + "%";
+    vol.setAttribute("aria-valuetext", s.vol + " percent");
+    radios.forEach(function (r) { r.checked = r.value === s.cb; });
+    swRm.setAttribute("aria-checked", String(rm));
+    if (s.ts === "1") html.removeAttribute("data-ts"); else html.setAttribute("data-ts", s.ts);
+    tsRadios.forEach(function (r) { r.checked = r.value === s.ts; });
+  }
+  function syncSound() { swSound.setAttribute("aria-checked", snd ? snd.getAttribute("aria-pressed") : "false"); }
+  apply();
+
+  /* sound section only makes sense if the browser can play audio */
+  if (!snd || snd.hidden || !(window.AudioContext || window.webkitAudioContext)) {
+    document.getElementById("grp-sound").hidden = true;
+  } else {
+    syncSound();
+    new MutationObserver(syncSound).observe(snd, { attributes: true, attributeFilter: ["aria-pressed", "hidden"] });
+    swSound.addEventListener("click", function () { snd.click(); });
+  }
+
+  vol.addEventListener("input", function () { s.vol = Number(vol.value); apply(); save(); });
+  radios.forEach(function (r) { r.addEventListener("change", function () { if (r.checked) { s.cb = r.value; apply(); save(); } }); });
+  tsRadios.forEach(function (r) { r.addEventListener("change", function () { if (r.checked) { s.ts = r.value; apply(); save(); } }); });
+  swRm.addEventListener("click", function () { s.rm = !(swRm.getAttribute("aria-checked") === "true"); apply(); save(); });
+  if (mq && mq.addEventListener) mq.addEventListener("change", function () { if (s.rm === null) apply(); });
+  document.getElementById("set-reset").addEventListener("click", function () {
+    s = { vol: 60, cb: "none", rm: null, ts: "1" }; apply(); save();
+    if (snd && snd.getAttribute("aria-pressed") === "true") snd.click();
+  });
+
+  function lock(on) { ["header", "main", "footer"].forEach(function (t) { var el = document.querySelector(t); if (el) el.inert = on; }); }
+  function open() { panel.hidden = false; lock(true); document.getElementById("set-close").focus(); }
+  function close() { panel.hidden = true; if (gate.hidden) lock(false); gear.focus(); }
+  gear.addEventListener("click", open);
+  document.getElementById("set-close").addEventListener("click", close);
+  document.getElementById("set-done").addEventListener("click", close);
+  panel.addEventListener("click", function (e) { if (e.target === panel) close(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) close(); });
+})();
+</script>
+<script>
+/* ===== EXTRAS: tap-to-reveal redactions + ambient sound (off by default) ===== */
+(function () {
+  /* tap / click a redaction bar to reveal it (hover and keyboard focus work from CSS) */
+  document.addEventListener("click", function (e) {
+    var r = e.target.closest(".redact");
+    if (r && !r.classList.contains("static")) r.classList.toggle("open");
+  });
+
+  /* ambient sound, generated in the browser (no audio files): low drone + faint static */
+  var btn = document.getElementById("snd");
+  if (!btn) return;
+  var AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) { btn.hidden = true; return; }
+  var ctx, master, on = false, offTimer, lbl = btn.querySelector(".lbl");
+  var saved = false;
+  try { saved = localStorage.getItem("cmrf-sound") === "1"; } catch (e) {}
+  /* loudness comes from the Settings volume slider (60% = the old fixed level) */
+  function LEVEL() { var v = window.CMRF_VOL; return (typeof v === "number" ? v : .6) * .28; }
+  document.addEventListener("cmrf:volume", function () {
+    if (ctx && on) { master.gain.cancelScheduledValues(ctx.currentTime); master.gain.setTargetAtTime(LEVEL(), ctx.currentTime, .08); }
+  });
+
+  function build() {
+    ctx = new AC();
+    master = ctx.createGain(); master.gain.value = 0; master.connect(ctx.destination);
+    var lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 240; lp.Q.value = .6; lp.connect(master);
+    [[55, "sine", .55], [55.7, "triangle", .22], [82.4, "sine", .2], [110.3, "sine", .12], [164.9, "sine", .035]].forEach(function (v) {
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = v[1]; o.frequency.value = v[0]; g.gain.value = v[2]; o.connect(g); g.connect(lp); o.start();
+    });
+    var lfo = ctx.createOscillator(), lg = ctx.createGain(); lfo.frequency.value = .06; lg.gain.value = 70; lfo.connect(lg); lg.connect(lp.frequency); lfo.start();
+    var len = ctx.sampleRate * 3, buf = ctx.createBuffer(1, len, ctx.sampleRate), d = buf.getChannelData(0);
+    for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    var src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+    var bp = ctx.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 2600; bp.Q.value = .35;
+    var ng = ctx.createGain(); ng.gain.value = .014;
+    src.connect(bp); bp.connect(ng); ng.connect(master); src.start();
+    var l2 = ctx.createOscillator(), l2g = ctx.createGain(); l2.frequency.value = .1; l2g.gain.value = .009; l2.connect(l2g); l2g.connect(ng.gain); l2.start();
+  }
+  function set(v, remember) {
+    on = v; clearTimeout(offTimer);
+    btn.setAttribute("aria-pressed", String(v)); lbl.textContent = v ? "Sound on" : "Sound off";
+    if (remember) { try { localStorage.setItem("cmrf-sound", v ? "1" : "0"); } catch (e) {} }
+    if (v) {
+      if (!ctx) build();
+      ctx.resume();
+      master.gain.cancelScheduledValues(ctx.currentTime);
+      master.gain.setTargetAtTime(LEVEL(), ctx.currentTime, 1.4);
+    } else if (ctx) {
+      master.gain.cancelScheduledValues(ctx.currentTime);
+      master.gain.setTargetAtTime(0, ctx.currentTime, .35);
+      offTimer = setTimeout(function () { if (!on) ctx.suspend(); }, 1800);
+    }
+  }
+  btn.addEventListener("click", function () { saved = false; set(!on, true); });
+  /* browsers only allow audio after a click: if sound was left on last time, resume on the first interaction */
+  function arm(e) {
+    /* clicking the sound / settings controls themselves must not also trigger the auto-resume (it used to flip the toggle straight back off) */
+    if (e && e.target && e.target.closest && e.target.closest("#snd,#gear,#settings")) return;
+    document.removeEventListener("pointerdown", arm, true); document.removeEventListener("keydown", arm, true);
+    if (saved && !on) set(true, false);
+  }
+  if (saved) { document.addEventListener("pointerdown", arm, true); document.addEventListener("keydown", arm, true); }
+  document.addEventListener("visibilitychange", function () {
+    if (!ctx || !on) return;
+    if (document.hidden) ctx.suspend(); else ctx.resume();
+  });
+})();
+</script>
+</body>
+</html>
